@@ -1,13 +1,15 @@
 var app = require('./config/app.config');
 var db = require('./config/db.config');
-var User = require('./models/user')
+
+var Product = require('./models/product');
+var productController = require('./controllers/productController');
+
+var products = require('./routes/productRouter');
 
 app.get('/', function (req, res) {
-  var api = {
-    name: 'API test',
-    port: 3442,
-    type: "CORS"
-  }
+  var product = "API de Produtos - /products - /store - /delete:id";
 
-  res.json(api);
+  res.json(product);
 });
+
+app.use('/products', products);

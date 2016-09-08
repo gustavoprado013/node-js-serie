@@ -1,21 +1,15 @@
-var express = require('express');
-var bodyParser = require('body-parser');
+var app = require('./config/app.config');
+var db = require('./config/db.config');
 
-var port = '3442';
+var Product = require('./models/product');
+var productController = require('./controllers/productController');
 
-var app = express();
-
-app.listen(port, function (req, res) {
-  console.log("Escutando na porta: " + port);
-});
+var products = require('./routes/productRouter');
 
 app.get('/', function (req, res) {
+  var product = "API de Produtos - /products - /store - /delete:id";
 
-  var api = {
-    name: 'API test',
-    port: 3442,
-    type: "CORS"
-  }
-
-  res.json(api);
+  res.json(product);
 });
+
+app.use('/products', products);
