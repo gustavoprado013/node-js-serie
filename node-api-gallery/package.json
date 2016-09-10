@@ -11,7 +11,6 @@
   "devDependencies": {
     "express": "^4.14.0",
     "multer": "^1.2.0",
-    "nodemon": "^1.10.2",
-    "simple-gallery-js": "^1.0.3"
+    "nodemon": "^1.10.2"
   }
 }
